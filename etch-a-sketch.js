@@ -1,8 +1,11 @@
 const sizeOfGrid = 16;
 const resetButton = document.querySelector('button')
-const wrapper = document.querySelector(".wrapper");
+const wrapper = document.querySelector('.wrapper')
 
 const createGrid = (amtOfGrids) => {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('wrapper')
+
     for (let i = 0; i < amtOfGrids; i ++ ) {
         const row = document.createElement('div')
         row.classList.add('grid-row')
@@ -22,6 +25,19 @@ const createGrid = (amtOfGrids) => {
         }
         wrapper.appendChild(row)
     }
+    container.appendChild(wrapper)
 }
 
-createGrid(sizeOfGrid);
+createGrid(pxSize)
+
+resetButton.addEventListener('click', () => {
+    let pxSize = Number(prompt('Pick a size!'))
+
+    while (pxSize > 100) {
+         pxSize = Number(prompt('Pick a smaller number, must be 100 or less!'))
+    } 
+
+    const wrapper = document.querySelector('.wrapper')
+    wrapper.remove()
+    createGrid(pxSize)
+})
