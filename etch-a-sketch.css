@@ -5,6 +5,6 @@
 .grid-box {
     width: 50px;
     height: 50px;
-    border-color: 1px purple;
+    border: 1px solid purple;
     background-color: salmon;
 }
