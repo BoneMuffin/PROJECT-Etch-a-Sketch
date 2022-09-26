@@ -1,6 +1,12 @@
-const sizeOfGrid = 16;
 const resetButton = document.querySelector('button')
-const wrapper = document.querySelector('.wrapper')
+const container = document.querySelector('.container')
+
+const rainbowRGB = () => {
+    const r = Math.floor(Math.random() * 256)
+    const g = Math.floor(Math.random() * 256)
+    const b = Math.floor(Math.random() * 256)
+    return { r, g, b }
+}
 
 const createGrid = (amtOfGrids) => {
     const wrapper = document.createElement('div')
@@ -11,24 +17,24 @@ const createGrid = (amtOfGrids) => {
         row.classList.add('grid-row')
 
         for (let j = 0; j < amtOfGrids; j++) {
-            const widthHeight = 960 / sizeOfGrid;
+            const widthHeight = 960 / amtOfGrids;
             const gridBox = document.createElement('div')
             gridBox.classList.add('grid-box')
             gridBox.style.width = `${widthHeight}px`
             gridBox.style.height = `${widthHeight}px`
-
             // changing brackground color with your mouse
             gridBox.addEventListener('mouseenter', () => {
-                gridBox.style.backgroundColor = 'black'
-            })
+                const opacity = Number(gridBox.style.opacity)
+                gridBox.style.background = `rgb(0, 0, 0)`
+                gridBox.style.opacity = opacity + .15
+            });
             row.appendChild(gridBox)
         }
+
         wrapper.appendChild(row)
     }
     container.appendChild(wrapper)
 }
-
-createGrid(pxSize)
 
 resetButton.addEventListener('click', () => {
     let pxSize = Number(prompt('Pick a size!'))
@@ -38,6 +44,11 @@ resetButton.addEventListener('click', () => {
     } 
 
     const wrapper = document.querySelector('.wrapper')
+
+    if (!wrapper) {
+        createGrid(pxSize)
+    } else {
     wrapper.remove()
     createGrid(pxSize)
-})
+    }
+});
