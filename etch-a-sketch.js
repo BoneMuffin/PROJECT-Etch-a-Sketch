@@ -13,6 +13,11 @@ const createGrid = (amtOfGrids) => {
             gridBox.classList.add('grid-box')
             gridBox.style.width = `${widthHeight}px`
             gridBox.style.height = `${widthHeight}px`
+
+            // changing brackground color with your mouse
+            gridBox.addEventListener('mouseenter', () => {
+                gridBox.style.backgroundColor = 'black'
+            })
             row.appendChild(gridBox)
         }
         wrapper.appendChild(row)
