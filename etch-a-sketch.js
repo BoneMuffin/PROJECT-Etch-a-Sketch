@@ -23,8 +23,7 @@ const createGrid = (amtOfGrids) => {
             gridBox.style.width = `${widthHeight}px`
             gridBox.style.height = `${widthHeight}px`
             // changing brackground color with your mouse
-            gridBox.addEventListener('click', () => {
-                const opacity = Number(gridBox.style.opacity)
+            gridBox.addEventListener('mouseenter', () => {                const opacity = Number(gridBox.style.opacity)
                 gridBox.style.background = `rgb(0, 0, 0)`
                 gridBox.style.opacity = opacity + .15
             });
