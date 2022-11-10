@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch a Sketch!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Walter+Turncoat&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="etch-a-sketch.css">
 </head>
 <body>
-    <div class="reset-section">
-        <button>Clear up?</button>
-    </div>
+    <header class="header-wrapper">
+        <h1 class="header">Etch A Sketch</h1>
+    </header>
 
-    <div class="container">
-    </div>
+    <div id="grid-wrapper" class="default-grid"></div>
+
+    <div class="controls">
+      <div>
+            <p>Grid density: </p>
+            <button class="small-size">Small</button>
+            <button class="medium-size">Small</button>
+            <button class="big-size">Small</button>
+      </div>
+    
+        <div class="color-controls">
+            <p>Colors: </p>
+            <button class="classic-colors">Small</button>
+            <button class="groovy-colors">Small</button>
+        </div>
+        <button class="reset">Play again?</button>
+   </div>
 
     <script src="etch-a-sketch.js"></script>
 </body>
