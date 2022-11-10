@@ -1,12 +1,52 @@
-.wrapper {
-   width: 960px;
-} 
+body {  
+    height: 100vh;
+    background: repeating-linear-gradient(
+  45deg,
+  brown,
+  brown 10px,
+  purple 10px,
+  purple 20px
+);
+    font-family: 'Walter Turncoat', cursive;    
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+  }
 
-.grid-row {
-    display:flex;
+.header-wrapper {
+    background:  #ffd64e;
+    border-radius: 20px 20px 0 0;
+    width: 1080px;
+    height: 95px;
+    margin: 0 auto;
 }
 
-.grid-box {
-    border: 1px solid #D3D3D3;
-    background-color: white;
+.header {
+    font-family: 'VT323', monospace;
+    font-size: 70px;
+    color: black;
+    text-shadow: 5px 5px white;
+    font-size: 80px;
+    text-align: center;
+    margin: 0;
+    padding-top: 15px;
+    line-height: 1;
+}
+
+.controls {
+    display: flex;
+    color: black;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 100px;
+    width: 1080px;
+    background-color:  #ffd64e;
+    border-radius: 0 0 20px 20px;
+
+}
+
+button {
+    font-family: 'Walter Turncoat', cursive;
 }
