@@ -1,17 +1,14 @@
-body {  
+* {
+    font-family: 'VT323', monospace;
+}
+
+body { 
     height: 100vh;
-    background: repeating-linear-gradient(
-  45deg,
-  brown,
-  brown 10px,
-  purple 10px,
-  purple 20px
-);
-    font-family: 'Walter Turncoat', cursive;    
+    background: repeating-linear-gradient(45deg, brown, brown 10px, purple 10px, purple 20px);
     padding: 100px 0;
     text-align: center;
     color: white;
-  }
+}
 
 .header-wrapper {
     background:  #ffd64e;
@@ -22,7 +19,6 @@ body {
 }
 
 .header {
-    font-family: 'VT323', monospace;
     font-size: 70px;
     color: black;
     text-shadow: 5px 5px white;
@@ -58,12 +54,27 @@ body {
     grid-template-columns: repeat(44, auto);
 }
 
+.medium-size > div {
+    height: 19px;
+    width: 19px;
+  }
+  
+.big-size {
+    grid-template-columns: repeat(88, auto);
+  }
+.big-size > div {
+    height: 9px;
+    width: 9px;
+  }
+
 .color-controls {
     margin-left: 20px;
 }
 
 .controls {
+    font-size: 30px;
     display: flex;
+    flex-direction: row;
     background-color: #9b812e;
     color: black;
     font-weight: 700;
@@ -72,32 +83,39 @@ body {
     margin: 0 auto;
     padding: 0 80px;
     height: 100px;
-    width: 1080px;
+    width: 920px;
     background-color:  #ffd64e;
     border-radius: 0 0 20px 20px;
 }
 
 .reset {
-    color: #ffd64e;
-    font-weight: 700px;
+font-weight: 700px;
 }
 
 button {
-    font-family: 'Walter Turncoat', cursive;
-    background-color: rgb(248, 46, 124); 
-    color: white;
-    border: none;
+    background-color: rgb(74, 0, 88);
+    color: #ffd64e;
+    font-size: 25px;
     border-radius: 5px;
+    width: 80px;
     padding: 6px 6px;
     margin-left: 20px;
     cursor: pointer;
-    outline: none;
+    border: none;
+    box-shadow: 3px 1.5px 1px 1.5px rgb(54, 1, 65);
 }
 
 button:hover {
-    background-color:rgb(189, 35, 94); 
+    background-color: purple;
 }
 
 button:active {
     transform: translateY(0.5px);
 }
+
+.footer {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 15px;
+    color: white;
+  }
