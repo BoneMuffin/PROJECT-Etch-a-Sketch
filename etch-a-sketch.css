@@ -29,13 +29,19 @@ body {
     line-height: 1;
 }
 
+
 #grid {
+    margin-top: 50px;
     display: inline-grid;
-    border: solid 2px #ffd64e;
-    border-width: 6px 100px 0;
-    grid-gap: 1px;
-    background-color: white;
+    border: 5px solid white;
+    border-radius: 50px;
+    height: 100px;
+    width: 920px;
+    background-color: gray;
+    box-shadow: 10px 10px black;
 }
+
+
 
 #grid > div {
     background-color: lightgray;
@@ -57,7 +63,6 @@ body {
 .medium-grid > div {
     height: 19px;
     width: 19px;
-    background-color: ;
   }
   
 .big-grid {
@@ -141,15 +146,4 @@ a:hover {
     text-decoration: underline;
 }
 
-
-#grid {
-    margin-top: 50px;
-    display: inline-grid;
-    border: 5px solid white;
-    border-radius: 50px;
-    height: 100px;
-    width: 920px;
-    background-color: gray;
-    box-shadow: 10px 10px black;
-}
 
