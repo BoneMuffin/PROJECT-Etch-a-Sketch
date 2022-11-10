@@ -29,7 +29,7 @@ body {
     line-height: 1;
 }
 
-#grid-wrapper {
+#grid {
     display: inline-grid;
     border: solid 2px #ffd64e;
     border-width: 6px 100px 0;
@@ -37,32 +37,34 @@ body {
     background-color: white;
 }
 
-#grid-wrapper > div {
+#grid > div {
     background-color: lightgray;
 }
 
-.small-size {
+.small-grid {
     grid-template-columns: repeat(22, auto);
 }
 
-.small-size > div {
+.small-grid > div {
     height: 39px;
     width: 39px;
 }
 
-.medium-size {
+.medium-grid {
     grid-template-columns: repeat(44, auto);
 }
 
-.medium-size > div {
+.medium-grid > div {
     height: 19px;
     width: 19px;
+    background-color: ;
   }
   
-.big-size {
+.big-grid {
     grid-template-columns: repeat(88, auto);
   }
-.big-size > div {
+
+.big-grid > div {
     height: 9px;
     width: 9px;
   }
@@ -116,6 +118,38 @@ button:active {
 .footer {
     text-align: center;
     font-weight: 700;
-    margin-top: 15px;
+    font-size: 25px;
+    bottom: 0;
+    justify-content: center;
+    margin-top: 50px;
     color: white;
   }
+
+  .footer-link {
+    font-size: 25px;
+    bottom: 0;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+#grid {
+    margin-top: 50px;
+    display: inline-grid;
+    border: 5px solid white;
+    border-radius: 50px;
+    height: 100px;
+    width: 920px;
+    background-color: gray;
+    box-shadow: 10px 10px black;
+}
+
