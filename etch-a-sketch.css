@@ -11,7 +11,7 @@ body {
 }
 
 .header-wrapper {
-    background:  #ffd64e;
+    background:  #00bfe0;
     border-radius: 20px 20px 0 0;
     width: 1080px;
     height: 95px;
@@ -30,21 +30,19 @@ body {
 }
 
 
-#grid {
-    margin-top: 50px;
+#grid-wrapper {
+    /* margin-top: 50px; */
     display: inline-grid;
-    border: 5px solid white;
     border-radius: 50px;
-    height: 100px;
-    width: 920px;
-    background-color: gray;
-    box-shadow: 10px 10px black;
+    height: 500px;
+    width: 950px;
+    background-color: lightgray;
 }
 
 
 
-#grid > div {
-    background-color: lightgray;
+#grid-wrapper > div {
+    background-color: gray;
 }
 
 .small-grid {
@@ -91,8 +89,13 @@ body {
     padding: 0 80px;
     height: 100px;
     width: 920px;
-    background-color:  #ffd64e;
+    background-color: #00bfe0;
     border-radius: 0 0 20px 20px;
+}
+
+.controls > div {
+    display: flex;
+    align-items: center;
 }
 
 .reset {
