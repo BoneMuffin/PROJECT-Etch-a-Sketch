@@ -1,14 +1,14 @@
 const sizeButtons = document.querySelectorAll('.size');
-const colorButtons = document.querySelectorAll('.classic-colors, .groovy-colors');
+const colorButtons = document.querySelectorAll('.mode');
 
 let currentColors = 'classic-colors';
 
-const createGrid = (size = 32 * 44, cssClass = 'medium-grid') => {
+const createGrid = (size = 32 * 45, cssClass = 'default-grid') => {
     const gameWrapper = document.getElementById('grid-wrapper');
 
     gameWrapper.innerHtml = '';
 
-    gameWrapper.classList.remove("small-grid", "default-grid", "big-grid");
+    gameWrapper.classList.remove("smallGrid", "defaultGrid", "bigGrid");
     gameWrapper.classList.add(cssClass);
 
     for (let i = 0; i < size; i += 1) {
@@ -21,9 +21,8 @@ const erase = () => {
     const gridItems = document.querySelectorAll('#grid-wrapper > div');
 
     gridItems.forEach((item) => {
-        const gridItem = item;
-        gridItem.style.backgroundColor = 'white';
-        gridItem.style.borderColor = '#D8D8D8';
+    const gridItem = item;
+        gridItem.style.backgroundColor = '#D8D8D8';
         gridItem.style.opacity = '1';
         gridItem.count = 0;
     });
@@ -37,20 +36,20 @@ function painting(mode) {
         gridItem.count = 0;
         gridItem.addEventListener('mouseenter', (e) => {
         if (mode === 'classic-colors') { 
-        e.target.style.backgroundColor = '#707070'; 
+        e.target.style.backgroundColor = 'white'; 
         e.target.count += 1; 
         e.target.style.opacity = 0.2 * e.target.count; // so it gets darker with each stroke //
         } else if (mode === 'groovy-colors') {
             const groovyPalette = ['#EF476F', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'];
             const rainbowMode = Math.floor(Math.random() * groovyPalette.length);
             e.target.style.opacity = 1;
-            e.style.backgroundColor = groovyPalette[rainbowMode];
+            e.target.style.backgroundColor = groovyPalette[rainbowMode];
         }
     });
    });
   }  
 
-  function selectButton(button) {
+function selectButton(button) {
     if (button.classList.contains('mode')) {
       colorButtons.forEach((selection) => {
         selection.classList.remove('active-button');
@@ -63,7 +62,7 @@ function painting(mode) {
     button.classList.add('active-button');
   }
   
-  function changeSize() {
+function changeSize() {
     const small = 16 * 22;
     const medium = 32 * 44;
     const big = 64 * 88;
@@ -74,7 +73,7 @@ function painting(mode) {
       selection.addEventListener('click', () => {
         if (selection.classList.contains('small')) {
           erase();
-          createGrid(small, 'small-grid');
+          create(small, 'smallGrid');
           painting(currentColors);
           selectButton(selection);
         } else if (selection.classList.contains('medium')) {
@@ -84,7 +83,7 @@ function painting(mode) {
           selectButton(selection);
         } else {
           erase();
-          createGrid(big, 'big-grid');
+          createGrid(big, 'bigGrid');
           painting(currentColors);
           selectButton(selection);
         }
@@ -92,13 +91,13 @@ function painting(mode) {
     });
   }
   
-  function changeMode() {
+  function changeColors() {
     colorButtons[0].classList.add('active-button');
   
     colorButtons.forEach((selection) => {
       selection.addEventListener('click', () => {
-        if (selection.classList.contains('classic')) {
-          painting('classic');
+        if (selection.classList.contains('classic-colors')) {
+          painting('classic-colors');
           selectButton(selection);
           currentColors = 'classic';
         } else {
@@ -118,9 +117,9 @@ function painting(mode) {
   
   function startGame() {
     createGrid();
-    painting('classic');
+    painting('classic-colors');
     changeSize();
-    changeMode();
+    changeColors();
     eraseListener();
   }
   
