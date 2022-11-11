@@ -3,9 +3,8 @@
 }
 
 body { 
-    height: 100vh;
     background: repeating-linear-gradient(45deg, brown, brown 10px, purple 10px, purple 20px);
-    padding: 100px 0;
+    padding: 50px 0;
     text-align: center;
     color: white;
 }
@@ -13,8 +12,8 @@ body {
 .header-wrapper {
     background:  #00bfe0;
     border-radius: 20px 20px 0 0;
-    width: 1080px;
-    height: 95px;
+    width: 1079px;
+    height: 94px;
     margin: 0 auto;
 }
 
@@ -25,24 +24,32 @@ body {
     font-size: 80px;
     text-align: center;
     margin: 0;
-    padding-top: 15px;
+    padding-top: 14px;
     line-height: 1;
 }
 
 
 #grid-wrapper {
     /* margin-top: 50px; */
+    border: solid #00bfe0;
+    border-width: 6px 100px 0;
+    grid-gap: 1px;
     display: inline-grid;
     border-radius: 50px;
-    height: 500px;
-    width: 950px;
-    background-color: lightgray;
+    background-color: white;
 }
-
-
 
 #grid-wrapper > div {
     background-color: gray;
+}
+
+.default-grid {
+    grid-template-columns: repeat(44, auto);
+}
+
+.default-grid > div {
+    height: 19px;
+    width: 19px;
 }
 
 .small-grid {
@@ -53,15 +60,6 @@ body {
     height: 39px;
     width: 39px;
 }
-
-.medium-grid {
-    grid-template-columns: repeat(44, auto);
-}
-
-.medium-grid > div {
-    height: 19px;
-    width: 19px;
-  }
   
 .big-grid {
     grid-template-columns: repeat(88, auto);
@@ -72,11 +70,8 @@ body {
     width: 9px;
   }
 
-.color-controls {
-    margin-left: 20px;
-}
 
-.controls {
+.size-controls {
     font-size: 30px;
     display: flex;
     flex-direction: row;
@@ -88,15 +83,26 @@ body {
     margin: 0 auto;
     padding: 0 80px;
     height: 100px;
-    width: 920px;
+    width: 1079px;
     background-color: #00bfe0;
     border-radius: 0 0 20px 20px;
+    text-shadow: 2px 3px white;
 }
 
-.controls > div {
+.size-controls > div {
     display: flex;
     align-items: center;
 }
+
+.color-controls {
+    margin-left: 20px;
+}
+
+.active-button {
+    background-color: purple !important;
+  }
+
+
 
 .reset {
 font-weight: 700px;
@@ -115,8 +121,9 @@ button {
     box-shadow: 3px 1.5px 1px 1.5px rgb(54, 1, 65);
 }
 
-button:hover {
+.controls button:hover {
     background-color: purple;
+    transition: all 0.3s;
 }
 
 button:active {
@@ -133,7 +140,7 @@ button:active {
     color: white;
   }
 
-  .footer-link {
+.footer-link {
     font-size: 25px;
     bottom: 0;
     justify-content: center;
