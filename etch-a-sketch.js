@@ -24,14 +24,9 @@ const createGrid = (amtOfGrids = 32 * 44, cssClass = 'medium-grid') => {
 }
 
 const erase = document.querySelector('.erase');
-    const gridItems = document.querySelectorAll('#grid-container > div');
-
-    gridItems.forEach((item) => {
-    const gridItem = item;
-    gridItem.style.backgroundColor = white;
-    gridItem.style.opacity = '1';
-    gridItem.count = 0;
- });
+    erase.addEventListener('click', function() {
+        let val = document.getElementById()
+    });
 
 function painting(mode) {
     const gridItems = document.querySelectorAll('#grid >div');
@@ -51,4 +46,5 @@ function painting(mode) {
      }
     });
     grid.appendChild(gridItems);
- };
+ });
+}
