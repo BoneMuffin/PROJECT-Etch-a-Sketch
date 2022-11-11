@@ -1,9 +1,9 @@
-const sizeButtons = document.querySelectorAll('.small-grid, .medium-grid, .big-grid');
+const sizeButtons = document.querySelectorAll('.size');
 const colorButtons = document.querySelectorAll('.classic-colors, .groovy-colors');
 
 let currentColors = 'classic-colors';
 
-const createGrid = (amtOfGrids = 32 * 44, cssClass = 'medium-grid') => {
+const createGrid = (size = 32 * 44, cssClass = 'medium-grid') => {
     const gameWrapper = document.getElementById('grid-wrapper');
 
     gameWrapper.innerHtml = '';
@@ -11,7 +11,7 @@ const createGrid = (amtOfGrids = 32 * 44, cssClass = 'medium-grid') => {
     gameWrapper.classList.remove("small-grid", "default-grid", "big-grid");
     gameWrapper.classList.add(cssClass);
 
-    for (let i = 0; i < amtOfGrids; i += 1) {
+    for (let i = 0; i < size; i += 1) {
         const row = document.createElement('div');
         gameWrapper.appendChild(row);
     }
@@ -22,7 +22,8 @@ const erase = () => {
 
     gridItems.forEach((item) => {
         const gridItem = item;
-        gridItem.style.backgroundColor = '#D8D8D8';
+        gridItem.style.backgroundColor = 'white';
+        gridItem.style.borderColor = '#D8D8D8';
         gridItem.style.opacity = '1';
         gridItem.count = 0;
     });
