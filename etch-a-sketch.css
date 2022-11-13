@@ -3,17 +3,18 @@
 }
 
 body { 
-    background: repeating-linear-gradient(45deg, brown, brown 10px, purple 10px, purple 20px);
-    padding: 50px 0;
+   /* background: repeating-linear-gradient(45deg, rgb(255, 150, 199), rgb(255, 150, 199) 10px, #f8d58a 10px, #f8d58a 20px); */
+    background: salmon;
     text-align: center;
     color: white;
+    padding-top: 50px;
 }
 
 .header-wrapper {
     background:  #00bfe0;
     border-radius: 20px 20px 0 0;
-    width: 1079px;
-    height: 94px;
+    width: 1080px;
+    height: 100px;
     margin: 0 auto;
 }
 
@@ -33,68 +34,40 @@ body {
     /* margin-top: 50px; */
     border: solid #00bfe0;
     border-width: 6px 100px 0;
-    grid-gap: 1px;
     display: inline-grid;
-    border-radius: 50px;
     background-color: white;
 }
 
 #grid-wrapper > div {
     background-color: white;
+    border: 1px solid rgb(228, 220, 220);
 }
 
-.default-grid {
-    grid-template-columns: repeat(44, auto);
-}
 
-.default-grid > div {
-    height: 19px;
-    width: 19px;
-}
-
-.small-grid {
-    grid-template-columns: repeat(22, auto);
-}
-
-.small-grid > div {
-    height: 39px;
-    width: 39px;
-}
-  
-.big-grid {
-    grid-template-columns: repeat(88, auto);
-  }
-
-.big-grid > div {
-    height: 9px;
-    width: 9px;
-  }
-
-
-.size-controls {
+.controls {
     font-size: 30px;
     display: flex;
-    flex-direction: row;
-    background-color: #9b812e;
-    color: black;
-    font-weight: 700;
     justify-content: space-evenly;
     align-items: center;
+    flex-direction: row;
     margin: 0 auto;
     padding: 0 80px;
-    height: 100px;
     width: 1079px;
-    background-color: #00bfe0;
+    height: 100px;
     border-radius: 0 0 20px 20px;
+
+    background-color: #00bfe0;
+    color: black;
     text-shadow: 2px 3px white;
+    font-weight: 700;
 }
 
-.size-controls > div {
+.controls > div {
     display: flex;
     align-items: center;
 }
 
-.color-controls {
+.controls {
     margin-left: 20px;
 }
 
@@ -102,13 +75,11 @@ body {
     background-color: purple !important;
   }
 
-
-
 .reset {
 font-weight: 700px;
 }
 
-button {
+.ccontrols button {
     background-color: rgb(74, 0, 88);
     color: #ffd64e;
     font-size: 25px;
@@ -132,8 +103,7 @@ button:active {
 
 .footer {
     text-align: center;
-    font-weight: 700;
-    font-size: 25px;
+    font-size: 30px;
     bottom: 0;
     justify-content: center;
     margin-top: 50px;
