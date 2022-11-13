@@ -1,8 +1,9 @@
-const sizeButtons = document.querySelectorAll('.size');
+// const sizeButtons = document.querySelectorAll('.size');//
 const eraseButton = document.querySelector('.erase');
 const colorButtons = document.querySelectorAll('.mode');
+const container = document.getElementById('grid-wrapper')
 
-let currentColors = 'classic-colors';
+let currentColors = 'classicMode';
 
 const createGrid = (amtOfGrids) => {
   const wrapper = document.createElement('div')
@@ -20,9 +21,9 @@ const createGrid = (amtOfGrids) => {
       gridBox.style.height = `${widthAndHeight}px`
       // adding mouseenter listener to change background color
       gridBox.addEventListener('mouseenter', () => {
-        const currentOpacity = Number(gridBox.style.opacity)
+        const classicMode = Number(gridBox.style.opacity)
         gridBox.style.background = `rgb(0, 0, 0)`
-        gridBox.style.opacity = currentOpacity + .1
+        gridBox.style.opacity = classicMode + .1
       })
       row.appendChild(gridBox)
     }
@@ -32,19 +33,29 @@ const createGrid = (amtOfGrids) => {
   container.appendChild(wrapper)
 }
 
-resetButton.addEventListener('click', () => {
+
+const groovyMode = () => {
+  const r = Math.floor(Math.random() * 256)
+  const g = Math.floor(Math.random() * 256)
+  const b = Math.floor(Math.random() * 256)
+
+  return { r, g, b }
+}
+
+
+eraseButton.addEventListener('click', () => {
   let userSize = Number(prompt('what dimensions do you want for the new grid'))
 
   while (userSize > 100) {
     userSize = Number(prompt('Pick a smaller number and make sure its 100 or less'))
   }
 
-  const gameWrapper = document.querySelector('.wrapper')
+  const wrapper = document.querySelector('.wrapper')
 
-  if (!gameWrapper) {
+  if (!wrapper) {
     createGrid(userSize)
   } else {
-    gameWrapper.remove()
+    wrapper.remove()
     createGrid(userSize)
   }
 

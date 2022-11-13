@@ -18,7 +18,7 @@ body {
     margin: 0 auto;
 }
 
-.header {
+.title {
     font-size: 70px;
     color: black;
     text-shadow: 5px 5px white;
@@ -35,22 +35,23 @@ body {
     border: solid #00bfe0;
     border-width: 6px 100px 0;
     display: inline-grid;
-    background-color: white;
 }
 
 #grid-wrapper > div {
     background-color: white;
     border: 1px solid rgb(228, 220, 220);
+    
 }
 
 
 .controls {
     font-size: 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     margin: 0 auto;
+
     padding: 0 80px;
     width: 1079px;
     height: 100px;
@@ -67,19 +68,7 @@ body {
     align-items: center;
 }
 
-.controls {
-    margin-left: 20px;
-}
-
-.active-button {
-    background-color: purple !important;
-  }
-
-.reset {
-font-weight: 700px;
-}
-
-.ccontrols button {
+.controls button {
     background-color: rgb(74, 0, 88);
     color: #ffd64e;
     font-size: 25px;
@@ -97,9 +86,18 @@ font-weight: 700px;
     transition: all 0.3s;
 }
 
-button:active {
-    transform: translateY(0.5px);
+.controls button:active {
+    transform: translateY(1px);
 }
+
+.active-button {
+    background-color: purple !important;
+  }
+
+.reset {
+font-weight: 700px;
+}
+
 
 .footer {
     text-align: center;
