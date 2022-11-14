@@ -14,3 +14,4 @@ function erase() {
     gridItem.count = 0;
   });
 }
+
