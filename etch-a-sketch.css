@@ -150,7 +150,6 @@ body {
   
 .settings-container button:active{
     background-color: #c4b441;
-
     transform: translateY(1px);
 }
   
