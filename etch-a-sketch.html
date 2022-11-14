@@ -8,38 +8,40 @@
 </head>
 <body>
 
+<div class="red-frame">
   <header class="header">
-    <h1 class="heading">Etch A Sketch</h1>
+     <h1 class="title">Etch A Sketch</h1>
   </header>
 
-  <main>
-    <div id="grid-container" class="default-grid"> <!-- 16 * 16 -->
+  <div class="red-shadow"></div>
+
+
+  <div id="canvas-container" class="default-grid"> <!-- 16 * 16 -->
     </div>
+  
+  <div class="settings-container">
+      <div class="controls-container">
+           <p>Grid size: </p>
+            <button class="size small">Small</button>
+            <button class="size medium">Medium</button>
+            <button class="size big">Big</button>
+      </div>
 
     <div class="controls-container">
-      <div>
-        <p>Grid size: </p>
-        <button class="size small">Small</button>
-        <button class="size medium">Medium</button>
-        <button class="size big">Big</button>
-      </div>
-      <div class="controls-container">
         <p>Mode: </p>
-        <button class="mode classic">Classic</button>
-        <button class="mode groovy">groovy</button>
-        <button id="erase-button">Erase</div>
-        </div>
-      </div>
+            <button class="mode classic">Classic</button>
+           <button class="mode groovy">Groovy</button>
+           <button id="erase-button">Erase</button>
+     </div>
+  </div>
+</div>
 
-    </div>
+<footer class="footer">
+  Built by
+  <a class="footer-link" href="https://github.com/BoneMuffin/"target="_blank">BoneMuffin</a> | <a class="footer-link" href="https://github.com/BoneMuffin/etch-a-sketch"target="_blank">Source</a>
+</footer>
 
-  </main>
-
-  <footer class="footer">
-    Built by
-    <a class="footer-link" href="https://github.com/BoneMuffin/"target="_blank">BoneMuffin</a> | <a class="footer-link" href="https://github.com/BoneMuffin/etch-a-sketch"target="_blank">Source</a>
-  </footer>
-
-  <script src="etch-a-sketch.js"></script>
+<script src="etch-a-sketch.js"></script>
+  
 </body>
 </html>

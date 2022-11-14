@@ -9,7 +9,8 @@
 #ffffff3e -DARK GREY
 */
 
-/* Main - Title */
+/* Header Section */
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
@@ -26,90 +27,119 @@ body {
   align-items: center;
   justify-content: center;
   padding: 30px;
+  height: 100vh;
 }
 
 .header {
+    box-sizing: border-box;
     text-align: center;
-    margin-bottom: 25px;
-    width: 1079px;
+    width: 1100;
     height: 94px;
     
     background-color: #e85432;
     padding: 10px 20px;
-    border-radius: 24px;
-    border-bottom: 10px solid #0000002a;
+    border-radius: 16px;
 }
 
-.heading {
-    font-size: 50px;
-    text-shadow: 2px 2px white;
+.title {
     text-align: center;
     margin: 0;
     line-height: 1;
-    padding-top: 10px;
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+    font-size: 70px;
+    text-shadow: 2px 2px white;
+ 
 }
 
-/* Canvas */
-
-#grid-container {
- display: inline-grid;
- background-color: #e85432;
- padding: 30px 50px;
- border-radius: 24px;
- border-width: 6px 100px 0;
-  height: 950px;
-  width: 1001px;
-}
-  
- #grid-container > div {
-    background-color: white;
-    border: 1px solid #D8D8D8;
-    
+.red-frame {
+  background-color: #e85432;
+  padding: 30px 50px;
+  border-radius: 24px;
+  border-bottom: 10px solid #0000002a;
   }
+
+.red-shadow {
+    background-color: #0000003e;
+    height: 8px;
+    border-radius: 10px 10px 0 0;
+  }
+
+
+/* Canvas - Main */
+
+#canvas-container {
+  display: inline-grid;
+  flex: 1;
+  padding: 30px 50px;
+
+  border-width: 6px 100px 0;
+  height: 600px;
+  width: 1080px;
+ 
+  background-color: rgb(212, 212, 212);
+  border-bottom: 1px solid #0000003e;
+  border-right: 1px solid #0000003e;
+
+  grid-template-columns: repeat(24, 1fr); 
+  grid-template-rows: repeat(12, 1fr);
+}
   
 .canvas-shadow {
     background-color: #ffffff3e;
     height: 5px;
     border-radius: 10px 10px 0 0;
   }
-  
 
 /* controls */
 
-.controls-container {
+.settings-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 30px 0 0 0;
+    
     width: 1079px;
     height: 100px;
-    gap: 25px;
+
     background-color: #e85432;
     border-radius: 0 0 20px 20px;
   }
-  
-  .controls-container > div {
+
+#erase-button {
+    background-color: rgb(255, 255, 255);  
+    border-radius: 50%;
+    border-bottom: 4px solid #707070;
+    box-shadow: 2px 3px 3px 1px #000000;
+  }
+
+  #erase-button:active {
+    background-color: #c0c0c0;
+  }
+
+.settings-container > div {
     display: flex;
     align-items: center;
-  
   }
-  .controls-container > div > p {
-    font-size: 40px;
+
+.settings-container > div > p {
+    font-size: 50px;
     margin: 0;
     text-shadow: 2px 2px white;
   }
   
-  .controls-container button {
-    font-size: 30px;
+.settings-container button {
+    font-size: 40px;
     background-color: #ffee6c;
-    color: #000000;
+    
     border: none;
     border-radius: 3px;
     padding: 6px 8px;
     margin-left: 20px;
+
     transition: all 0.3s;
-    cursor: pointer;
     outline: none;
     cursor: pointer;
 
@@ -118,8 +148,8 @@ body {
     box-shadow: 2px 3px 3px 1px #000000;
   }
   
-.controls-container button:active{
-    background-color: #918637;
+.settings-container button:active{
+    background-color: #c4b441;
 
     transform: translateY(1px);
 }
@@ -159,7 +189,7 @@ body {
 /* Footer section */
 
 footer{
-    font-size: 25px;
+    font-size: 40px;
     bottom: 0;
     justify-content: center;
     padding-top: 50px;
