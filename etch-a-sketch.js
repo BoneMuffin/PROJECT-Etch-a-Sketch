@@ -1,17 +1,12 @@
 const sizeButtons = document.querySelector('.size');
-const modeButtons = document.querySelectorAll('mode');
+const modeButtons = document.querySelectorAll('.mode');
 const eraseButton = document.querySelector('#erase-button'); 
-const container = document.querySelector('.container');
 
+const canvasContainer = document.querySelector('.canvas-container');
+const redFrame = document.querySelector('.red-frame');
 
-function erase() {
-  const gridItems = document.querySelectorAll('#grid-container > div');
+// requirements so far: 
 
-  gridItems.forEach((item) => {
-    const gridItem = item;
-    gridItem.style.backgroundColor = '#D8D8D8';
-    gridItem.style.opacity = '1';
-    gridItem.count = 0;
-  });
-}
-
+// 16x16 default grid inside grid wrapper (960px wide), fully functioning for mouse events
+// groovy(rgb) and classic mode(+10% opacity with each mouseover), functioning buttons
+// fully functioning size buttons
