@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   height: 100vh;
   padding: 30px;
 }
@@ -94,7 +95,13 @@ body {
     border-radius: 10px 10px 0 0;
   }
 
-/* controls */
+  .grid-box {
+    border: 1px solid #ffffff3e;
+    background-color: #ffffff;
+  }
+
+
+/* Settings - controls */
 
 .settings-container {
     display: flex;
@@ -155,25 +162,8 @@ body {
     background-color: #c4b441;
     transform: translateY(1px);
 }
-  
 
-/* cells inside red frame */
-
-.grid-square {
-  border-top: 1px solid #0000002a;
-  border-left: 1px solid #0000002a;
-  transition: all 0.2s ease;
-}
-
-.grid-square.hover {
-  background-color: rgb(189, 189, 189);
-}
-
-.grid-square.draw {
-  background-color: #565656;
-}
-
-/* Erase animation */
+/* Shake animation */
 
 .canvas-shake {
   animation-name: shake;
