@@ -8,10 +8,21 @@ const redFrame = document.querySelector('.red-frame');
 
 // 16x16 default grid inside grid wrapper (960px wide), fully functioning for mouse events
 const createGrid = (amtOfGrids) => {
-    const gameWrapper = document.createElement('div')
-    gameWrapper.classList.add('gameWrapper')
+    const canvasWrapper = document.createElement('div')
+    canvasWrapper.classList.add('canvas-container')
 
-    for ()
+    for (let i = 0; i < amtOfGrids; i++) {    // layout of the grid cells
+        const row = document.createElement('div') 
+        row.classLisst.add('grid-row')
+
+        for (let j = 0; j < amtOfGrids; j++) {
+            const widthAndHeight = 1080 / amtOfGrids
+            const gridBox = document.createElement('div')
+            gridBox.classList.add('grid-box')    // so the boxes have grey borders :p
+            gridBox.style.width = `${widthAndHeight}px` // result of division into px
+            gridBox.style.height = `${widthAndHeight}px`
+        }
+    }
 }
 // groovy(rgb) and classic mode(+10% opacity with each mouseover), functioning buttons
 const paintDivs =
