@@ -100,6 +100,10 @@ body {
     background-color: #ffffff;
   }
 
+  .grid-row {
+    display: flex;
+  }
+
 
 /* Settings - controls */
 
