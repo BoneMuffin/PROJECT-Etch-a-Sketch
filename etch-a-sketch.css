@@ -95,22 +95,19 @@ body {
     border-radius: 10px 10px 0 0;
   }
 
-  .grid-box {
+.grid-box {
     border: 1px solid #ffffff3e;
     background-color: #ffffff;
   }
 
-  .grid-row {
+.grid-row {
     display: flex;
   }
-
 
 /* Settings - controls */
 
 .settings-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 0 auto;
     padding: 30px 0 0 0;
     
@@ -126,32 +123,35 @@ body {
     border-radius: 50%;
     border-bottom: 4px solid #707070;
     box-shadow: 2px 3px 3px 1px #000000;
+    font-size: 50px;
   }
 
-  #erase-button:active {
+#erase-button:active {
     background-color: #c0c0c0;
   }
 
 .settings-container > div {
     display: flex;
     align-items: center;
+
   }
 
 .settings-container > div > p {
-    font-size: 50px;
+    font-size: 55px;
     margin: 0;
     text-shadow: 2px 2px white;
   }
   
 .settings-container button {
-  
-    font-size: 40px;
+    justify-content: space-around;
+    font-size: 45px;
     background-color: #ffee6c;
     
     border: none;
     border-radius: 4px;
     padding: 5px 10px 5px 10px;
-    margin-left: 15px;
+    margin-left: 100px;
+   
 
     transition: all 0.1s;
     outline: none;
@@ -184,14 +184,13 @@ body {
 
 /* Footer section */
 
-footer{
-    font-size: 40px;
-    bottom: 0;
+footer {
+    display: flex;
+    font-size: 45px;
     justify-content: center;
-    padding-top: 50px;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(250, 250, 250);
 }
