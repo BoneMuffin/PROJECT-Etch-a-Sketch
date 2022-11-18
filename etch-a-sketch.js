@@ -1,59 +1,81 @@
 const sizeButton = document.querySelector('.size');
-const modeButtons = document.querySelectorAll('.mode');
+const modeButton = document.querySelector('.mode');
 const eraseButton = document.querySelector('#erase-button'); 
 
 const container = document.querySelector('#canvas-container');
 const redFrame = document.querySelector('.red-frame');
 
-let defaultGrid = 16;
+let currentMode = 'classic'
 
 // 16x16 default grid inside grid wrapper (960px wide), fully functioning for mouse events
-const createGrid = (amtOfGrids) => {
-    const wrapper = document.createElement('div')
-    wrapper.classList.add('wrapper')
-  
-    for (let i = 0; i < amtOfGrids; i++) {
-      const row = document.createElement('div')
-      row.classList.add('grid-row')
-  
-      for (let j = 0; j < amtOfGrids; j++) {
-        const widthAndHeight = 1080 / amtOfGrids
-        const gridBox = document.createElement('div')
-        gridBox.classList.add('grid-box')
-        gridBox.style.width = `${widthAndHeight}px`
-        gridBox.style.height = `${widthAndHeight}px`
-        // adding mouseenter listener to change background color
-      const paintBoxes = gridBox.addEventListener('mouseenter', () => {
-          const classicMode = Number(gridBox.style.opacity)
-          gridBox.style.background = `rgb(0, 0, 0)`
-          gridBox.style.opacity = classicMode + .1
-        })
-        row.appendChild(gridBox)
+const createGrid 
+
+
+
+
+
+// paint each cell 
+function paintBoxes(mode) {
+  const gridItems = document.querySelectorAll('#canvas-container > grid-box');
+
+  gridItems.forEach((item) => {
+    const gridItem = item;
+    gridItem.count = 0;
+    gridItem.addEventListener('mouseenter', (e) => {
+
+      // classic palette (+10% opacity with each mouseover event)
+      if (mode === 'classic') {
+        const currentOpacity = Number(gridBox.style.opacity)
+        gridBox.style.background = `rgb(0, 0, 0)`
+        gridBox.style.opacity = currentOpacity + .1
+
+        // groovy colors with RGB
+      } else if (mode === 'psychedelic') {
+        const groovyPalette = ['#EF476F', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'];
+        const randomColor = Math.floor(Math.random() * groovyPalette.length);
+        e.target.style.opacity = 1;
+        e.target.style.backgroundColor = psychedelicPallete[randomColor];
       }
-      wrapper.appendChild(row)
-    } 
-    container.appendChild(wrapper)
-  }
 
-sizeButton.addEventListener('click', () => {
-    let userSize = Number(prompt('What dimensions do you want for the new grid?'))
-  
-    while (userSize > 100) {
-      userSize = Number(prompt('Pick a smaller number and make sure its 100 or less!'))
-    }
-  
-    const wrapper = document.querySelector('#canvas-container')
-  
-    if (!wrapper) {
-      createGrid(userSize)
-    } else {
-      wrapper.remove()
-      createGrid(userSize)
-    }
-  
+    });
   });
+}
 
-// groovy(rgb) and classic mode(+10% opacity with each mouseover), functioning buttons
+// switch between palettes
+function switchMode() {
+  modeButton.classList.add('active-button');
+
+  modeButton.forEach((selection) => {
+    selection.addEventListener('click', () => {
+      if (selection.classList.contains('classic')) {
+        paintBoxes('classic');
+        selectButton(selection);
+        currentMode = 'classic';
+      } else {
+        paintBoxes('groovy');
+        selectButton(selection);
+        currentMode = 'groovy';
+      }
+    });
+  });
+}
+
+// functioning mode buttons 
+function selectButton(button) {
+  if (button.classList.contains('mode')) {
+    modeButton.forEach((selection) => {
+      selection.classList.remove('active-button');
+    });
+  } else {
+    sizeButton.forEach((selection) => {
+      selection.classList.remove('active-button');
+    });
+  }
+  button.classList.add('active-button');
+}
+
+// erase button
+//Clear the canvas and then add CSS grid properties to the canvas element
 
 
 // add class for the shaking animation //
@@ -66,3 +88,13 @@ function shakeCanvas() {
   //when the animation is finished, remove the class so it's ready to run again
   redFrame.addEventListener('animationend',() => redFrame.classList.remove('canvas-shake'));
 };
+
+function startGame() {
+  createGrid();
+  paintBoxes('classic');
+//  changeSize();
+  switchMode();
+  eraseButton();
+}
+
+startGame();
