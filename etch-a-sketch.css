@@ -69,6 +69,11 @@ body {
     border-radius: 10px 10px 0 0;
   }
 
+.canvas-shadow {
+    background-color: #ffffff3e;
+    height: 5px;
+    border-radius: 10px 10px 0 0;
+  }
 
 /* Canvas - Main */
 
@@ -89,13 +94,8 @@ body {
   grid-template-rows: repeat(12, 1fr);
 }
   
-.canvas-shadow {
-    background-color: #ffffff3e;
-    height: 5px;
-    border-radius: 10px 10px 0 0;
-  }
 
-.grid-box {
+#canvas-container > .grid-box {
     border: 1px solid #000000;
     background-color: #ffffff;
   }
@@ -118,6 +118,10 @@ body {
     border-radius: 0 0 20px 20px;
   }
 
+.active-button {
+    background-color: #FFED66 !important;
+  }
+  
 #erase-button {
     background-color: rgb(255, 255, 255);  
     border-radius: 50%;
