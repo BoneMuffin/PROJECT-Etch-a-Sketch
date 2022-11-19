@@ -7,7 +7,7 @@ const redFrame = document.querySelector('.red-frame');
 
 let currentMode = 'classic'
 
-function createGrid(size = 32 * 44, cssClass = 'default-grid') {
+function createGrid(size = 32 * 32, cssClass = 'default-grid') {
   const gameContainer = document.getElementById('canvas-container');
 
   gameContainer.innerHTML = '';

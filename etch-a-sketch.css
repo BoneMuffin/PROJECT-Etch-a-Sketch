@@ -79,29 +79,45 @@ body {
 
 #canvas-container {
   display: inline-grid;
-  flex: 1;
-  padding: 30px 50px;
-
   border-width: 6px 100px 0;
-  height: 600px;
-  width: 1080px;
- 
-  background-color: rgb(228, 228, 228);
+  border: solid #FF5E5B;
+  grid-gap: 1;
+
+  background-color: white;
   border-bottom: 1px solid #0000003e;
   border-right: 1px solid #0000003e;
-
-  grid-template-columns: repeat(24, 1fr); 
-  grid-template-rows: repeat(12, 1fr);
 }
   
-
-#canvas-container > .grid-box {
-    border: 1px solid #000000;
-    background-color: #ffffff;
+#canvas-container > div {
+  border: 1px solid #000000;
+  background-color:  #D8D8D8;
   }
 
-.grid-row {
-    display: flex;
+.small-grid {
+    grid-template-columns: repeat(22, auto);
+  }
+
+.small-grid > div {
+    height: 39px;
+    width: 39px;
+  }
+  
+.default-grid {
+    grid-template-columns: repeat(44, auto);
+  }
+
+.default-grid > div {
+    height: 19px;
+    width: 19px;
+  }
+  
+.big-grid {
+    grid-template-columns: repeat(88, auto);
+  }
+
+ .big-grid > div {
+    height: 9px;
+    width: 9px;
   }
 
 /* Settings - controls */
@@ -162,7 +178,7 @@ body {
 
 #erase-button {
   background-color: rgb(255, 255, 255);  
-  border-radius: 100px;
+  border-radius: 50%;
   border-bottom: 4px solid #707070;
   box-shadow: 2px 3px 3px 1px #000000;
   font-size: 50px;
