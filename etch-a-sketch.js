@@ -29,9 +29,9 @@ function paintBoxes(mode) {
     gridItem.count = 0;
     gridItem.addEventListener('mouseenter', (e) => {
       if (mode === 'classic') {
-        e.target.style.backgroundColor = '#707070';
-        e.target.count += 1;
-        e.target.style.opacity = 0.2 * e.target.count;
+        const currentOpacity = Number(gridItem.style.opacity)
+        gridItem.style.opacity = currentOpacity + .1;
+        e.target.style.backgroundColor = `rgb(0, 0, 0)`;
       }  else if (mode === 'groovy') {
         const groovyPalette = ['#EF476F', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'];
         const randomColor = Math.floor(Math.random() * groovyPalette.length);
