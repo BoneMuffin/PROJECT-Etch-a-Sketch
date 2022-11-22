@@ -36,8 +36,9 @@ body {
 .header {
     box-sizing: border-box;
     text-align: center;
-    width: 1080px;
+    width: 1079px;
     height: 94px;
+    margin: 0 auto;
     
     background-color: #e85432;
     padding: 10px 20px;
@@ -83,14 +84,14 @@ body {
   border: solid #FF5E5B;
   grid-gap: 1;
 
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #0000003e;
   border-right: 1px solid #0000003e;
 }
   
 #canvas-container > div {
-  border: 1px solid #000000;
-  background-color:  #D8D8D8;
+  border: 1px solid #e7e7e7;
+  background-color: white;
   }
 
 .small-grid {
@@ -115,7 +116,7 @@ body {
     grid-template-columns: repeat(88, auto);
   }
 
- .big-grid > div {
+.big-grid > div {
     height: 9px;
     width: 9px;
   }
@@ -223,3 +224,4 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
