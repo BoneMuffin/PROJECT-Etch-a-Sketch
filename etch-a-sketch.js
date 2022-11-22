@@ -68,10 +68,11 @@ function selectButton(button) {
   button.classList.add('active-button');
 }
 
+// fix grid not attaching itself to the red container
 function changeSize() {
     const small = 16 * 22;
     const medium = 32 * 44;
-    const big = 64 * 88;
+    const big = 64 * 65;
   
     sizeButtons[1].classList.add('active-button');
   
