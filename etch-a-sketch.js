@@ -1,9 +1,11 @@
-const sizeButtons = document.querySelector('.size');
-const modeButtons = document.querySelector('.mode');
-const eraseButton = document.querySelector('#erase-button'); 
+const sizeButtons = document.querySelectorAll('.size');
+const modeButtons = document.querySelectorAll('.mode');
 
+
+const eraseButton = document.querySelector('#erase-button'); 
 const container = document.querySelector('#canvas-container');
 const redFrame = document.querySelector('.red-frame');
+
 
 let currentMode = 'classic'
 
@@ -16,13 +18,24 @@ function createGrid(size = 32 * 32, cssClass = 'default-grid') {
   gameContainer.classList.add(cssClass);
 
   for (let i = 0; i < size; i += 1) {
-    const div = document.createElement('grid-box');
+    const div = document.createElement('div');
     gameContainer.appendChild(div);
   }
 }
 
-function paintBoxes(mode) {
+function erase() {
   const gridItems = document.querySelectorAll('#canvas-container > grid-box');
+
+  gridItems.forEach((item) => {
+    const gridItem = item;
+    gridItem.style.backgroundColor = '#D8D8D8';
+    gridItem.style.opacity = '1';
+    gridItem.count = 0;
+  });
+}
+
+function paintBoxes(mode) {
+  const gridItems = document.querySelectorAll('#canvas-container > div');
 
   gridItems.forEach((item) => {
     const gridItem = item;
@@ -55,40 +68,29 @@ function selectButton(button) {
   button.classList.add('active-button');
 }
 
-function erase() {
-  const gridItems = document.querySelectorAll('#canvas-container > grid-box');
-
-  gridItems.forEach((item) => {
-    const gridItem = item;
-    gridItem.style.backgroundColor = '#D8D8D8';
-    gridItem.style.opacity = '1';
-    gridItem.count = 0;
-  });
-}
-
 function changeSize() {
-  const small = 16 * 22;
-  const medium = 32 * 44;
-  const big = 64 * 88;
-
-  sizeButtons[1].classList.add('active-button');
-
-  sizeButtons.forEach((selection) => {
-    selection.addEventListener('click', () => {
+    const small = 16 * 22;
+    const medium = 32 * 44;
+    const big = 64 * 88;
+  
+    sizeButtons[1].classList.add('active-button');
+  
+    sizeButtons.forEach((selection) => {
+      selection.addEventListener('click', () => {
       if (selection.classList.contains('small')) {
         erase();
-        generateGrid(small, 'small-grid');
-        startPainting(currentMode);
+        createGrid(small, 'small-grid');
+        paintBoxes(currentMode);
         selectButton(selection);
       } else if (selection.classList.contains('medium')) {
         erase();
-        generateGrid(medium, 'default-grid');
-        startPainting(currentMode);
+        createGrid(medium, 'default-grid');
+        paintBoxes(currentMode);
         selectButton(selection);
       } else {
         erase();
-        generateGrid(big, 'big-grid');
-        startPainting(currentMode);
+        createGrid(big, 'big-grid');
+        paintBoxes(currentMode);
         selectButton(selection);
       }
     });
@@ -101,19 +103,17 @@ function switchMode() {
   modeButtons.forEach((selection) => {
     selection.addEventListener('click', () => {
       if (selection.classList.contains('classic')) {
-        startPainting('classic');
+        paintBoxes('classic');
         selectButton(selection);
         currentMode = 'classic';
       } else {
-        startPainting('groovy');
+        paintBoxes('groovy');
         selectButton(selection);
         currentMode = 'groovy';
       }
     });
   });
 }
-
-
 
 function eraseListener() {
   const eraseButton = document.querySelector('#erase-button');
@@ -135,9 +135,9 @@ function shakeCanvas() {
 function startGame() {
   createGrid();
   paintBoxes('classic');
-//  changeSize();
+  changeSize();
   switchMode();
-  eraseButton();
+  eraseListener();
 }
 
 startGame();
