@@ -1,14 +1,3 @@
-/* COLOR PALETTE
-#e85432 - RED
-#c2462a - DARK RED
-#c175c8 - PINK
-
-#ffee6c - LIGHT YELLOW
-#918637 - DARK YELLOW
-#D8D8D8 - LIGHT GREY
-#ffffff3e -DARK GREY
-*/
-
 /* Header Section */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
@@ -21,6 +10,8 @@
 
 body {
   background-color: #c175c8;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .screen {
@@ -38,11 +29,11 @@ body {
     text-align: center;
     width: 1079px;
     height: 94px;
-    margin: 0 auto;
+    margin: 0;
     
     background-color: #e85432;
     padding: 10px 20px;
-    border-radius: 16px;
+    border-radius: 20px 20px 0 0;
 }
 
 .title {
@@ -82,7 +73,6 @@ body {
   display: inline-grid;
   border-width: 6px 100px 0;
   border: solid #FF5E5B;
-  grid-gap: 1;
 
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #0000003e;
