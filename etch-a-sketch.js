@@ -24,11 +24,11 @@ function createGrid(size = 32 * 32, cssClass = 'default-grid') {
 }
 
 function erase() {
-  const gridItems = document.querySelectorAll('#canvas-container > grid-box');
+  const gridItems = document.querySelectorAll('#canvas-container > div');
 
   gridItems.forEach((item) => {
     const gridItem = item;
-    gridItem.style.backgroundColor = '#D8D8D8';
+    gridItem.style.backgroundColor = 'white';
     gridItem.style.opacity = '1';
     gridItem.count = 0;
   });
@@ -72,7 +72,7 @@ function selectButton(button) {
 function changeSize() {
     const small = 16 * 22;
     const medium = 32 * 44;
-    const big = 64 * 65;
+    const big = 64 * 88;
   
     sizeButtons[1].classList.add('active-button');
   
@@ -126,7 +126,7 @@ function eraseListener() {
 eraseButton.addEventListener('click', shakeCanvas);
 
 function shakeCanvas() {
-  const boxes = document.querySelectorAll('.grid-box');
+  const boxes = document.querySelectorAll('.div');
   boxes.forEach(box => box.style.backgroundColor = "");
   redFrame.classList.add('canvas-shake');
   //when the animation is finished, remove the class so it's ready to run again
