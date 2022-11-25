@@ -19,7 +19,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   height: 100vh;
   padding: 30px;
 }
@@ -51,7 +50,7 @@ body {
 .red-frame {
   background-color: #e85432;
   padding: 30px 50px;
-  border-radius: 25px;
+  border-radius: 24px;
   border-bottom: 10px solid #0000002a;
   }
 
@@ -71,17 +70,23 @@ body {
 
 #canvas-container {
   display: inline-grid;
-  border-width: 6px 100px 0;
   border: solid #FF5E5B;
+
+  width: 1079px;
 
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #0000003e;
   border-right: 1px solid #0000003e;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
   
 #canvas-container > div {
   border: 1px solid #e7e7e7;
   background-color: white;
+  transition: all 0.2s ease;
   }
 
 .small-grid {
