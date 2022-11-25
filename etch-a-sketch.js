@@ -9,7 +9,7 @@ const redFrame = document.querySelector('.red-frame');
 
 let currentMode = 'classic'
 
-function createGrid(size = 32 * 32, cssClass = 'default-grid') {
+function createGrid(size = 32 * 44, cssClass = 'default-grid') {
   const gameContainer = document.getElementById('canvas-container');
 
   gameContainer.innerHTML = '';
@@ -72,7 +72,7 @@ function selectButton(button) {
 function changeSize() {
     const small = 16 * 22;
     const medium = 32 * 44;
-    const big = 64 * 88;
+    const big = 65 * 88;
   
     sizeButtons[1].classList.add('active-button');
   
