@@ -69,12 +69,11 @@ body {
 /* Canvas - Main */
 
 #canvas-container {
-  display: inline-grid;
+  display: grid;
   border: solid #FF5E5B;
+  flex: 1;
 
   width: 1079px;
-
-  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #0000003e;
   border-right: 1px solid #0000003e;
 
@@ -84,9 +83,11 @@ body {
 }
   
 #canvas-container > div {
-  border: 1px solid #e7e7e7;
-  background-color: white;
+  border-top: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
+  background-color: pink;
   transition: all 0.2s ease;
+
   }
 
 .small-grid {
@@ -121,8 +122,8 @@ body {
 .controls-container {
     display: flex;
     margin: 0 auto;
-    padding: 0 80px;
-    justify-content: space-evenly;
+    padding: 0 80px 0 0;
+    justify-content: space-between;
     align-items: center;
     
     width: 1079px;
@@ -149,7 +150,7 @@ body {
   }
   
 .controls-container button {
-    font-size: 45px;
+    font-size: 40px;
     background-color: #ffee6c;
     
     border: none;
