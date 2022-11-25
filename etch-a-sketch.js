@@ -55,6 +55,8 @@ function paintBoxes(mode) {
   });
 }
 
+// fix red frame changing when the size of grid changes 
+
 function selectButton(button) {
   if (button.classList.contains('mode')) {
     modeButtons.forEach((selection) => {
