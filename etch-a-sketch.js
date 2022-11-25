@@ -72,7 +72,7 @@ function selectButton(button) {
 function changeSize() {
     const small = 16 * 22;
     const medium = 32 * 44;
-    const big = 65 * 88;
+    const big = 64 * 88;
   
     sizeButtons[1].classList.add('active-button');
   

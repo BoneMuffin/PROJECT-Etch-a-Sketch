@@ -19,13 +19,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 30px;
+  height: 95vh;
+  padding-bottom: 50px;
 }
 
 .header {
     box-sizing: border-box;
-    text-align: center;
     width: 1079px;
     height: 94px;
     margin: 0;
@@ -36,7 +35,7 @@ body {
 }
 
 .title {
-    text-align: center;
+  text-align: center;
     margin: 0;
     line-height: 70%;
     margin-bottom: 25px;
@@ -69,52 +68,55 @@ body {
 /* Canvas - Main */
 
 #canvas-container {
-  display: grid;
+  display: inline-grid;
   border: solid #FF5E5B;
-  flex: 1;
+  background-color: white;
 
-  width: 1079px;
   border-bottom: 1px solid #0000003e;
   border-right: 1px solid #0000003e;
-
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
 }
   
 #canvas-container > div {
   border-top: 1px solid #e7e7e7;
   border-left: 1px solid #e7e7e7;
-  background-color: pink;
-  transition: all 0.2s ease;
 
-  }
+  background-color: white;
+
+  transition: all 0.2s ease;
+ }
 
 .small-grid {
     grid-template-columns: repeat(22, auto);
+    grid-template-rows: repeat(16, auto);
+
   }
 
 .small-grid > div {
-    height: 39px;
-    width: 39px;
+    height: 52px;
+    width: 52px;
   }
   
 .default-grid {
     grid-template-columns: repeat(44, auto);
+    grid-template-rows: repeat(32, auto);
+
   }
 
 .default-grid > div {
-    height: 19px;
-    width: 19px;
+    height: 25px;
+    width: 25px;
   }
   
 .big-grid {
     grid-template-columns: repeat(88, auto);
+    grid-template-rows: repeat(64, auto);
+
   }
 
 .big-grid > div {
-    height: 9px;
-    width: 9px;
+    height: 13px;
+    width: 13px;
   }
 
 /* Settings - controls */
