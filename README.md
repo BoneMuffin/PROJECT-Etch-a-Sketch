@@ -19,6 +19,6 @@ Part of the Odin Project's curriculum
  - Instead of prompt, I added three grid size options for better UX and UI.
 
 
-## Live preview [here](https://bonemuffin.github.io/Etch-a-Sketch/etch-a-sketch.html)
+## Live preview [here](https://bonemuffin.github.io/PROJECT.Etch-a-Sketch/etch-a-sketch.html)
 ![](./web-preview.png)
 
