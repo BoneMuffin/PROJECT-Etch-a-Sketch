@@ -1,2 +1,2 @@
 # Etch-a-Sketch
-Live preview:
+Live preview [here](https://bonemuffin.github.io/Etch-a-Sketch/etch-a-sketch.html)
