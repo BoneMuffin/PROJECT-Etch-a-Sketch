@@ -20,5 +20,4 @@ Part of the Odin Project's curriculum
 
 
 ## Live preview [here](https://bonemuffin.github.io/PROJECT.Etch-a-Sketch/etch-a-sketch.html)
-![](./web-preview.png)
 
